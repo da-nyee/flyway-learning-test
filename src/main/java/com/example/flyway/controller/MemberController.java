@@ -20,7 +20,7 @@ public class MemberController {
 
     @PostMapping("/members")
     public ResponseEntity<Void> create(@RequestBody MemberRequest request) {
-        memberService.create(new MemberRequestDto(request.getName()));
+        memberService.create(new MemberRequestDto(request.getName(), request.getCompany()));
 
         return ResponseEntity.ok().build();
     }

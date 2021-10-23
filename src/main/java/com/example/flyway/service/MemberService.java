@@ -16,7 +16,7 @@ public class MemberService {
     }
 
     public void create(MemberRequestDto requestDto) {
-        Member member = new Member(requestDto.getName());
+        Member member = new Member(requestDto.getName(), requestDto.getCompany());
 
         memberRepository.save(member);
     }

@@ -9,15 +9,18 @@ import javax.persistence.Id;
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String name;
+    private String name;
+
+    private String company;
 
     protected Member() {
     }
 
-    public Member(String name) {
+    public Member(String name, String company) {
         this.name = name;
+        this.company = company;
     }
 
     public Long getId() {
@@ -26,5 +29,9 @@ public class Member {
 
     public String getName() {
         return name;
+    }
+
+    public String getCompany() {
+        return company;
     }
 }
